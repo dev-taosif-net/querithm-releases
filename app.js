@@ -194,7 +194,48 @@ function render(releases) {
   });
 }
 
+function initWorkspaceTabs() {
+  const tabs = Array.from(document.querySelectorAll(".seg-btn[data-tab]"));
+  const panes = Array.from(document.querySelectorAll(".window-body[data-pane]"));
+  if (!tabs.length || !panes.length) return;
+
+  let timer = null;
+
+  function activate(tabKey) {
+    tabs.forEach((btn) => {
+      const active = btn.dataset.tab === tabKey;
+      btn.classList.toggle("active", active);
+      btn.setAttribute("aria-selected", active ? "true" : "false");
+    });
+    panes.forEach((pane) => {
+      const active = pane.dataset.pane === tabKey;
+      pane.classList.toggle("active", active);
+      pane.hidden = !active;
+    });
+  }
+
+  tabs.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
+      }
+      activate(btn.dataset.tab);
+    });
+  });
+
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    let idx = 0;
+    timer = setInterval(() => {
+      idx = (idx + 1) % tabs.length;
+      activate(tabs[idx].dataset.tab);
+    }, 5000);
+  }
+}
+
 async function main() {
+  initWorkspaceTabs();
+
   const os = detectPlatform();
   if (os) {
     const key = os === "macos" ? `macos-${await detectMacArch()}` : os;
