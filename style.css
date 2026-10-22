@@ -1,0 +1,196 @@
+:root {
+  --bg: #f6f8fb;
+  --surface: #ffffff;
+  --border: #dde3ec;
+  --text: #121826;
+  --muted: #5b6576;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-text: #ffffff;
+  --code-bg: #eef2f7;
+  --notice-bg: #fff7e6;
+  --notice-border: #f2c86b;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b0f18;
+    --surface: #131a28;
+    --border: #243045;
+    --text: #e6ebf3;
+    --muted: #94a0b4;
+    --accent: #38bdf8;
+    --accent-hover: #7dd3fc;
+    --accent-text: #06111d;
+    --code-bg: #0e1420;
+    --notice-bg: #2a2212;
+    --notice-border: #7a5a1c;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, sans-serif;
+}
+
+a { color: var(--accent); }
+a:hover { color: var(--accent-hover); }
+
+.top, main, footer {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.top-link { font-size: 15px; }
+
+.hero {
+  text-align: center;
+  padding: 48px 0 40px;
+}
+
+.hero-icon { border-radius: 22px; }
+
+h1 {
+  margin: 16px 0 8px;
+  font-size: 40px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.tagline {
+  margin: 0 auto 32px;
+  max-width: 34em;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: var(--accent-text);
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.btn-primary:hover { background: var(--accent-hover); color: var(--accent-text); }
+.btn-primary:focus-visible { outline: 3px solid var(--accent-hover); outline-offset: 3px; }
+
+.meta {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.notice {
+  display: inline-block;
+  margin: 24px 0 0;
+  padding: 10px 16px;
+  border: 1px solid var(--notice-border);
+  border-radius: 8px;
+  background: var(--notice-bg);
+  font-size: 15px;
+}
+
+.stats {
+  margin: 24px 0 0;
+  color: var(--muted);
+}
+.stats strong {
+  color: var(--text);
+  font-size: 20px;
+  font-variant-numeric: tabular-nums;
+}
+
+.platforms {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.card {
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+}
+.card.current { border-color: var(--accent); }
+
+.card h2 { margin: 0; font-size: 20px; }
+.req { margin: 2px 0 12px; color: var(--muted); font-size: 14px; }
+
+.card ul { margin: 0; padding: 0; list-style: none; }
+.card li {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 0;
+  border-top: 1px solid var(--border);
+}
+.size, .count { color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.count { margin: 8px 0 0; }
+
+a.disabled { color: var(--muted); pointer-events: none; text-decoration: none; }
+
+.install { padding: 40px 0 24px; }
+.install h2 { margin: 0 0 4px; font-size: 22px; }
+.install > p { margin: 0 0 16px; color: var(--muted); }
+
+details {
+  margin-bottom: 8px;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+summary { cursor: pointer; font-weight: 600; }
+details ol { padding-left: 20px; }
+
+pre {
+  overflow-x: auto;
+  padding: 12px;
+  border-radius: 8px;
+  background: var(--code-bg);
+  font-size: 14px;
+}
+code { font-family: ui-monospace, "Cascadia Code", Menlo, Consolas, monospace; }
+
+footer {
+  padding-top: 16px;
+  padding-bottom: 40px;
+  color: var(--muted);
+  font-size: 14px;
+  text-align: center;
+}
+footer p { margin: 4px 0; }
+
+@media (max-width: 720px) {
+  .platforms { grid-template-columns: minmax(0, 1fr); }
+  h1 { font-size: 32px; }
+  .hero { padding-top: 24px; }
+}

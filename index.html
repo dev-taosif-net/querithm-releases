@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src https://api.github.com; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>Download Querithm</title>
+  <meta name="description" content="Download Querithm, a desktop SQL IDE for SQL Server and PostgreSQL, for Windows, macOS and Linux.">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="./"><img src="icon.svg" alt="" width="28" height="28"> Querithm</a>
+    <a class="top-link" href="https://github.com/dev-taosif-net/querithm-releases/releases">All releases</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img class="hero-icon" src="icon.svg" alt="" width="96" height="96">
+      <h1>Querithm</h1>
+      <p class="tagline">A desktop SQL IDE for SQL Server and PostgreSQL.<br>Runs offline. Passwords stay in your OS keyring.</p>
+
+      <div class="cta">
+        <a id="primary" class="btn-primary" href="#platforms">Download</a>
+        <p id="primary-meta" class="meta">Windows, macOS and Linux</p>
+        <p id="primary-alt" class="meta" hidden></p>
+      </div>
+
+      <p id="notice" class="notice" hidden></p>
+      <p id="stats" class="stats" hidden><strong id="stats-total"></strong> downloads</p>
+    </section>
+
+    <section id="platforms" class="platforms" aria-label="All downloads">
+      <article class="card" data-os="windows">
+        <h2>Windows</h2>
+        <p class="req">Windows 10 or 11, 64-bit</p>
+        <ul>
+          <li><a data-asset="Querithm-windows-x64-setup.exe" href="https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-windows-x64-setup.exe">Installer (.exe)</a><span class="size"></span></li>
+          <li><a data-asset="Querithm-windows-x64.msi" href="https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-windows-x64.msi">MSI package</a><span class="size"></span></li>
+        </ul>
+        <p class="count" hidden></p>
+      </article>
+
+      <article class="card" data-os="macos">
+        <h2>macOS</h2>
+        <p class="req">Apple Silicon and Intel</p>
+        <ul>
+          <li><a data-asset="Querithm-macos-arm64.dmg" href="https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-macos-arm64.dmg">Apple Silicon (M1 and later)</a><span class="size"></span></li>
+          <li><a data-asset="Querithm-macos-x64.dmg" href="https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-macos-x64.dmg">Intel</a><span class="size"></span></li>
+        </ul>
+        <p class="count" hidden></p>
+      </article>
+
+      <article class="card" data-os="linux">
+        <h2>Linux</h2>
+        <p class="req">x86-64, WebKitGTK 4.1</p>
+        <ul>
+          <li><a data-asset="Querithm-linux-x64.AppImage" href="https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-linux-x64.AppImage">AppImage</a><span class="size"></span></li>
+          <li><a data-asset="Querithm-linux-x64.deb" href="https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-linux-x64.deb">Debian / Ubuntu (.deb)</a><span class="size"></span></li>
+          <li><a data-asset="Querithm-linux-x64.rpm" href="https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-linux-x64.rpm">Fedora / RHEL (.rpm)</a><span class="size"></span></li>
+        </ul>
+        <p class="count" hidden></p>
+      </article>
+    </section>
+
+    <section class="install">
+      <h2>First launch</h2>
+      <p>The installers are not code-signed yet, so your OS will ask you to confirm once.</p>
+      <details data-os="windows">
+        <summary>Windows: “Windows protected your PC”</summary>
+        <p>Click <b>More info</b>, then <b>Run anyway</b>.</p>
+      </details>
+      <details data-os="macos">
+        <summary>macOS: “Querithm can’t be opened”</summary>
+        <ol>
+          <li>Open the .dmg and drag Querithm to Applications.</li>
+          <li>Open Querithm once and close the warning.</li>
+          <li>Go to <b>System Settings → Privacy &amp; Security</b>, scroll down and click <b>Open Anyway</b>.</li>
+        </ol>
+        <p>If macOS says the app “is damaged”, run this in Terminal, then open it again:</p>
+        <pre><code>xattr -dr com.apple.quarantine /Applications/Querithm.app</code></pre>
+      </details>
+      <details data-os="linux">
+        <summary>Linux: AppImage and packages</summary>
+        <pre><code>chmod +x Querithm-linux-x64.AppImage
+./Querithm-linux-x64.AppImage
+
+sudo apt install ./Querithm-linux-x64.deb   # Debian / Ubuntu
+sudo dnf install ./Querithm-linux-x64.rpm   # Fedora / RHEL</code></pre>
+      </details>
+      <details>
+        <summary>Verify your download</summary>
+        <p>Every release has a <a href="https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/SHA256SUMS.txt">SHA256SUMS.txt</a>. Compare it with:</p>
+        <pre><code>sha256sum Querithm-*                     # Linux
+shasum -a 256 Querithm-*                 # macOS
+Get-FileHash .\Querithm-windows-x64-setup.exe   # Windows PowerShell</code></pre>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <p>Download counts come from GitHub’s public release data. They count downloads, not people.</p>
+    <p>This page sets no cookies and runs no analytics.</p>
+  </footer>
+</body>
+</html>
