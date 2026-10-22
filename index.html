@@ -5,24 +5,126 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src https://api.github.com; base-uri 'none'; form-action 'none'">
   <meta name="referrer" content="no-referrer">
-  <title>Download Querithm</title>
-  <meta name="description" content="Download Querithm, a desktop SQL IDE for SQL Server and PostgreSQL, for Windows, macOS and Linux.">
+  <title>Querithm — Modern SQL IDE for SQL Server &amp; PostgreSQL</title>
+  <meta name="description" content="Download Querithm, a desktop SQL IDE for SQL Server and PostgreSQL developed by Taosif Bin Murtaza, for Windows, macOS and Linux.">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icon.png">
   <link rel="stylesheet" href="style.css">
   <script src="app.js" defer></script>
 </head>
 <body>
-  <header class="top">
-    <a class="brand" href="./"><img src="icon.svg" alt="" width="28" height="28"> Querithm</a>
-    <a class="top-link" href="https://github.com/dev-taosif-net/querithm-releases/releases">All releases</a>
+  <!-- Clean, Smooth Animated Light Background -->
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="aura aura-1"></div>
+    <div class="aura aura-2"></div>
+    <div class="aura aura-3"></div>
+    <div class="grid-plane"></div>
+    <div class="beam beam-1"></div>
+    <div class="beam beam-2"></div>
+  </div>
+
+  <header class="header-wrap">
+    <nav class="top" aria-label="Main navigation">
+      <a class="brand" href="./">
+        <svg class="nav-logo" viewBox="0 0 512 512" width="30" height="30" aria-hidden="true">
+          <defs>
+            <linearGradient id="nbg" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#141927"/>
+              <stop offset="100%" stop-color="#090C14"/>
+            </linearGradient>
+            <linearGradient id="nring" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#38BDF8"/>
+              <stop offset="55%" stop-color="#2563EB"/>
+              <stop offset="100%" stop-color="#4F46E5"/>
+            </linearGradient>
+            <linearGradient id="nplat" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#60A5FA"/>
+              <stop offset="50%" stop-color="#38BDF8"/>
+              <stop offset="100%" stop-color="#2563EB"/>
+            </linearGradient>
+            <linearGradient id="npulse" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#10B981"/>
+              <stop offset="100%" stop-color="#34D399"/>
+            </linearGradient>
+          </defs>
+          <rect width="464" height="464" x="24" y="24" rx="104" fill="url(#nbg)" stroke="#262B38" stroke-width="8"/>
+          <path d="M398 292 C402 278 404 264 404 248 C404 166.3 337.7 100 256 100 C174.3 100 108 166.3 108 248 C108 329.7 174.3 396 256 396 C286 396 314 387 337.5 371.5" fill="none" stroke="url(#nring)" stroke-width="34" stroke-linecap="round"/>
+          <path d="M180 184 V212 C180 227 214 238 256 238 C298 238 332 227 332 212 V184 Z" fill="url(#nplat)" opacity="0.88"/>
+          <ellipse cx="256" cy="184" rx="76" ry="24" fill="#7DD3FC"/>
+          <path d="M180 232 V262 C180 277 214 288 256 288 C298 288 332 277 332 262 V232 C316 244 288 250 256 250 C224 250 196 244 180 232 Z" fill="url(#nplat)" opacity="0.75"/>
+          <path d="M180 282 V312 C180 327 214 338 256 338 C275 338 292 335 306 330 L332 282 C316 294 288 300 256 300 C224 300 196 294 180 282 Z" fill="url(#nplat)" opacity="0.6"/>
+          <path class="pulse-path" d="M276 314 L318 314 L344 262 L374 366 L402 302 L430 338" fill="none" stroke="url(#npulse)" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand-name">Querithm</span>
+      </a>
+
+      <div class="top-nav">
+        <a class="nav-item" href="#platforms">Downloads</a>
+        <a class="nav-item" href="#preview">Workspace</a>
+        <a class="nav-item" href="#benchmarks">Benchmarks</a>
+        <a class="nav-item" href="#install">First launch</a>
+        <a class="nav-item" href="mailto:dev.taosif.net@gmail.com">Contact</a>
+        <a class="top-link" href="https://github.com/dev-taosif-net/querithm-releases/releases">
+          <span>All releases</span>
+          <svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M4.5 3A.75.75 0 0 0 4.5 4.5h5.69L3.22 11.47a.75.75 0 1 0 1.06 1.06L11.25 5.56v5.69a.75.75 0 0 0 1.5 0v-7.5A.75.75 0 0 0 12 3H4.5Z"/></svg>
+        </a>
+      </div>
+    </nav>
   </header>
 
   <main>
+    <!-- BALANCED, SPACIOUS HERO -->
     <section class="hero">
-      <img class="hero-icon" src="icon.svg" alt="" width="96" height="96">
-      <h1>Querithm</h1>
-      <p class="tagline">A desktop SQL IDE for SQL Server and PostgreSQL.<br>Runs offline. Passwords stay in your OS keyring.</p>
+      <div class="hero-brand-row">
+        <div class="logo-stage">
+          <div class="logo-halo" aria-hidden="true"></div>
+          <svg class="hero-icon" viewBox="0 0 512 512" width="68" height="68" role="img" aria-label="Querithm logo">
+            <defs>
+              <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#141927"/>
+                <stop offset="100%" stop-color="#090C14"/>
+              </linearGradient>
+              <linearGradient id="ring" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#38BDF8"/>
+                <stop offset="55%" stop-color="#2563EB"/>
+                <stop offset="100%" stop-color="#4F46E5"/>
+              </linearGradient>
+              <linearGradient id="plat" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#60A5FA"/>
+                <stop offset="50%" stop-color="#38BDF8"/>
+                <stop offset="100%" stop-color="#2563EB"/>
+              </linearGradient>
+              <linearGradient id="pulse" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#10B981"/>
+                <stop offset="100%" stop-color="#34D399"/>
+              </linearGradient>
+            </defs>
+            <rect width="464" height="464" x="24" y="24" rx="104" fill="url(#bg)" stroke="#262B38" stroke-width="8"/>
+            <path class="logo-ring-anim" d="M398 292 C402 278 404 264 404 248 C404 166.3 337.7 100 256 100 C174.3 100 108 166.3 108 248 C108 329.7 174.3 396 256 396 C286 396 314 387 337.5 371.5" fill="none" stroke="url(#ring)" stroke-width="34" stroke-linecap="round"/>
+            <g class="db-tier-1">
+              <path d="M180 184 V212 C180 227 214 238 256 238 C298 238 332 227 332 212 V184 Z" fill="url(#plat)" opacity="0.88"/>
+              <ellipse cx="256" cy="184" rx="76" ry="24" fill="#7DD3FC"/>
+              <circle cx="206" cy="214" r="5" fill="#0F1117"/>
+            </g>
+            <g class="db-tier-2">
+              <path d="M180 232 V262 C180 277 214 288 256 288 C298 288 332 277 332 262 V232 C316 244 288 250 256 250 C224 250 196 244 180 232 Z" fill="url(#plat)" opacity="0.75"/>
+              <circle cx="206" cy="264" r="5" fill="#0F1117"/>
+            </g>
+            <g class="db-tier-3">
+              <path d="M180 282 V312 C180 327 214 338 256 338 C275 338 292 335 306 330 L332 282 C316 294 288 300 256 300 C224 300 196 294 180 282 Z" fill="url(#plat)" opacity="0.6"/>
+              <circle class="led-dot" cx="206" cy="314" r="5" fill="#10B981"/>
+            </g>
+            <path class="pulse-path" d="M276 314 L318 314 L344 262 L374 366 L402 302 L430 338" fill="none" stroke="url(#pulse)" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <h1>Querithm</h1>
+      </div>
+
+      <p class="tagline">
+        A modern, offline-first desktop SQL IDE for <strong>SQL Server</strong> and <strong>PostgreSQL</strong>.<br>
+        Instant AST autocomplete, 1M-row Apache Arrow grids, and credentials kept strictly in your OS keyring.
+      </p>
 
       <div class="cta">
         <a id="primary" class="btn-primary" href="#platforms">Download</a>
@@ -34,77 +136,299 @@
       <p id="stats" class="stats" hidden><strong id="stats-total"></strong> downloads</p>
     </section>
 
-    <section id="platforms" class="platforms" aria-label="All downloads">
-      <article class="card" data-os="windows">
-        <h2>Windows</h2>
-        <p class="req">Windows 10 or 11, 64-bit</p>
-        <ul>
-          <li><a data-asset="Querithm-windows-x64-setup.exe" href="https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-windows-x64-setup.exe">Installer (.exe)</a><span class="size"></span></li>
-          <li><a data-asset="Querithm-windows-x64.msi" href="https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-windows-x64.msi">MSI package</a><span class="size"></span></li>
-        </ul>
-        <p class="count" hidden></p>
-      </article>
+    <!-- PLATFORM DOWNLOADS (IMMEDIATELY ACCESSIBLE, SPACIOUS 3-COLUMN GRID) -->
+    <section id="platforms" class="platforms-wrap" aria-label="All downloads">
+      <div class="platforms">
+        <article class="card" data-os="windows">
+          <div class="card-top">
+            <div class="os-badge os-win" aria-hidden="true">
+              <svg class="os-svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M3 3h8.5v8.5H3V3zm9.5 0H21v8.5h-8.5V3zM3 12.5h8.5V21H3v-8.5zm9.5 0H21V21h-8.5v-8.5z"/></svg>
+            </div>
+            <div>
+              <h2>Windows</h2>
+              <p class="req">Windows 10 or 11, 64-bit</p>
+            </div>
+          </div>
+          <ul>
+            <li><a data-asset="Querithm-windows-x64-setup.exe" href="https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-windows-x64-setup.exe">Installer (.exe)</a><span class="size"></span></li>
+            <li><a data-asset="Querithm-windows-x64.msi" href="https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-windows-x64.msi">MSI package</a><span class="size"></span></li>
+          </ul>
+          <p class="count" hidden></p>
+        </article>
 
-      <article class="card" data-os="macos">
-        <h2>macOS</h2>
-        <p class="req">Apple Silicon and Intel</p>
-        <ul>
-          <li><a data-asset="Querithm-macos-arm64.dmg" href="https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-macos-arm64.dmg">Apple Silicon (M1 and later)</a><span class="size"></span></li>
-          <li><a data-asset="Querithm-macos-x64.dmg" href="https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-macos-x64.dmg">Intel</a><span class="size"></span></li>
-        </ul>
-        <p class="count" hidden></p>
-      </article>
+        <article class="card" data-os="macos">
+          <div class="card-top">
+            <div class="os-badge os-mac" aria-hidden="true">
+              <svg class="os-svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.96 6.33c.67-.81 1.12-1.94 1-3.08-.96.04-2.13.64-2.82 1.45-.61.7-.15 1.86-.99 2.98 1.08.08 2.14-.54 2.81-1.35"/></svg>
+            </div>
+            <div>
+              <h2>macOS</h2>
+              <p class="req">Apple Silicon and Intel</p>
+            </div>
+          </div>
+          <ul>
+            <li><a data-asset="Querithm-macos-arm64.dmg" href="https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-macos-arm64.dmg">Apple Silicon (M1 and later)</a><span class="size"></span></li>
+            <li><a data-asset="Querithm-macos-x64.dmg" href="https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-macos-x64.dmg">Intel</a><span class="size"></span></li>
+          </ul>
+          <p class="count" hidden></p>
+        </article>
 
-      <article class="card" data-os="linux">
-        <h2>Linux</h2>
-        <p class="req">x86-64, WebKitGTK 4.1</p>
-        <ul>
-          <li><a data-asset="Querithm-linux-x64.AppImage" href="https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-linux-x64.AppImage">AppImage</a><span class="size"></span></li>
-          <li><a data-asset="Querithm-linux-x64.deb" href="https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-linux-x64.deb">Debian / Ubuntu (.deb)</a><span class="size"></span></li>
-          <li><a data-asset="Querithm-linux-x64.rpm" href="https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-linux-x64.rpm">Fedora / RHEL (.rpm)</a><span class="size"></span></li>
-        </ul>
-        <p class="count" hidden></p>
-      </article>
+        <article class="card" data-os="linux">
+          <div class="card-top">
+            <div class="os-badge os-linux" aria-hidden="true">
+              <svg class="os-svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2C9.24 2 7 4.24 7 7c0 1.65.79 3.11 2.02 4.03C7.17 12.44 6 14.84 6 17.5 6 20 8.5 22 12 22s6-2 6-4.5c0-2.66-1.17-5.06-3.02-6.47C16.21 10.11 17 8.65 17 7c0-2.76-2.24-5-5-5zm-1.5 4.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm3 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2zM12 10c1.1 0 2 .45 2 1s-.9 1-2 1-2-.45-2-1 .9-1 2-1zm0 4c2.21 0 4 1.57 4 3.5S14.21 21 12 21s-4-1.57-4-3.5S9.79 14 12 14z"/></svg>
+            </div>
+            <div>
+              <h2>Linux</h2>
+              <p class="req">x86-64, WebKitGTK 4.1</p>
+            </div>
+          </div>
+          <ul>
+            <li><a data-asset="Querithm-linux-x64.AppImage" href="https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-linux-x64.AppImage">AppImage</a><span class="size"></span></li>
+            <li><a data-asset="Querithm-linux-x64.deb" href="https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-linux-x64.deb">Debian / Ubuntu (.deb)</a><span class="size"></span></li>
+            <li><a data-asset="Querithm-linux-x64.rpm" href="https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-linux-x64.rpm">Fedora / RHEL (.rpm)</a><span class="size"></span></li>
+          </ul>
+          <p class="count" hidden></p>
+        </article>
+      </div>
     </section>
 
-    <section class="install">
-      <h2>First launch</h2>
-      <p>The installers are not code-signed yet, so your OS will ask you to confirm once.</p>
-      <details data-os="windows">
-        <summary>Windows: “Windows protected your PC”</summary>
-        <p>Click <b>More info</b>, then <b>Run anyway</b>.</p>
-      </details>
-      <details data-os="macos">
-        <summary>macOS: “Querithm can’t be opened”</summary>
-        <ol>
-          <li>Open the .dmg and drag Querithm to Applications.</li>
-          <li>Open Querithm once and close the warning.</li>
-          <li>Go to <b>System Settings → Privacy &amp; Security</b>, scroll down and click <b>Open Anyway</b>.</li>
-        </ol>
-        <p>If macOS says the app “is damaged”, run this in Terminal, then open it again:</p>
-        <pre><code>xattr -dr com.apple.quarantine /Applications/Querithm.app</code></pre>
-      </details>
-      <details data-os="linux">
-        <summary>Linux: AppImage and packages</summary>
-        <pre><code>chmod +x Querithm-linux-x64.AppImage
+    <!-- SPACIOUS FULL-WIDTH WORKSPACE PREVIEW -->
+    <section id="preview" class="preview-section" aria-label="Querithm workspace preview">
+      <div class="preview-shell">
+        <div class="window-frame">
+          <div class="window-bar">
+            <div class="traffic-lights" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="segmented-tabs" role="tablist" aria-label="Workspace view">
+              <button type="button" class="seg-btn active" role="tab" aria-selected="true" data-tab="query">Query &amp; 1M-Row Grid</button>
+              <button type="button" class="seg-btn" role="tab" aria-selected="false" data-tab="plan">Execution Plan</button>
+              <button type="button" class="seg-btn" role="tab" aria-selected="false" data-tab="debug">Debugger &amp; Diff</button>
+            </div>
+            <div class="conn-indicator">
+              <span class="conn-dot"></span>
+              <span>prd-sql-01 · SalesDB</span>
+            </div>
+          </div>
+
+          <!-- View 1: Query & Grid -->
+          <div class="window-body active" data-pane="query">
+            <div class="editor-area">
+              <div class="code-line"><span class="ln">1</span><span class="kw">WITH</span> <span class="id">RegionalSales</span> <span class="kw">AS</span> (</div>
+              <div class="code-line"><span class="ln">2</span>  <span class="kw">SELECT</span> <span class="id">o.CustomerId</span>, <span class="fn">SUM</span>(<span class="id">o.TotalAmount</span>) <span class="kw">AS</span> <span class="id">AnnualSpend</span>, <span class="fn">COUNT</span>(*) <span class="kw">AS</span> <span class="id">OrderCount</span></div>
+              <div class="code-line"><span class="ln">3</span>  <span class="kw">FROM</span> <span class="id">dbo.Orders</span> <span class="id">o</span> <span class="kw">WHERE</span> <span class="id">o.OrderDate</span> &gt;= <span class="str">'2026-01-01'</span> <span class="kw">GROUP BY</span> <span class="id">o.CustomerId</span></div>
+              <div class="code-line"><span class="ln">4</span>)</div>
+              <div class="code-line active-line"><span class="ln">5</span><span class="kw">SELECT</span> <span class="id">r.CustomerId</span>, <span class="id">r.AnnualSpend</span>, <span class="id">r.</span><span class="caret"></span> <span class="kw">FROM</span> <span class="id">RegionalSales</span> <span class="id">r</span> <span class="kw">ORDER BY</span> <span class="id">r.AnnualSpend</span> <span class="kw">DESC</span>;</div>
+
+              <div class="ac-popover" aria-hidden="true">
+                <div class="ac-row ac-active">
+                  <span class="ac-badge">column</span>
+                  <span class="ac-name">OrderCount</span>
+                  <span class="ac-meta">int · RegionalSales CTE</span>
+                </div>
+                <div class="ac-row">
+                  <span class="ac-badge">column</span>
+                  <span class="ac-name">AnnualSpend</span>
+                  <span class="ac-meta">decimal(19,4) · RegionalSales CTE</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid-area">
+              <div class="grid-bar">
+                <span>Results · Apache Arrow Stream</span>
+                <span class="grid-pill">1,000,000 rows · 229 ms</span>
+              </div>
+              <div class="grid-rows">
+                <div class="g-row g-head">
+                  <span>#</span><span>CustomerId</span><span>Region</span><span>OrderCount</span><span>AnnualSpend</span><span>Status</span>
+                </div>
+                <div class="g-row">
+                  <span class="g-idx">1</span><span>CUST-09481</span><span>North America</span><span>1,420</span><span class="g-num">$284,910.00</span><span><span class="status-chip">Verified</span></span>
+                </div>
+                <div class="g-row">
+                  <span class="g-idx">2</span><span>CUST-03192</span><span>Europe West</span><span>980</span><span class="g-num">$192,400.50</span><span><span class="status-chip">Verified</span></span>
+                </div>
+                <div class="g-row g-stream">
+                  <span class="g-idx">3</span><span>CUST-07740</span><span>Asia Pacific</span><span>845</span><span class="g-num">$164,120.75</span><span><span class="status-chip chip-live">Streaming</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- View 2: Execution Plan -->
+          <div class="window-body" data-pane="plan" hidden>
+            <div class="plan-view">
+              <div class="plan-cards">
+                <div class="p-node">
+                  <span class="p-tag tag-emerald">8% Cost</span>
+                  <strong>Index Seek</strong>
+                  <span class="p-sub">IX_Orders_OrderDate · 1.2 ms</span>
+                  <div class="p-track"><span class="p-fill w-8"></span></div>
+                </div>
+                <div class="p-edge" aria-hidden="true"></div>
+                <div class="p-node p-node-warn">
+                  <span class="p-tag tag-amber">68% Cost</span>
+                  <strong>Hash Match Aggregate</strong>
+                  <span class="p-sub">Group By CustomerId · 142 ms</span>
+                  <div class="p-track"><span class="p-fill w-68"></span></div>
+                </div>
+                <div class="p-edge" aria-hidden="true"></div>
+                <div class="p-node">
+                  <span class="p-tag tag-blue">24% Cost</span>
+                  <strong>Sort (Top N)</strong>
+                  <span class="p-sub">AnnualSpend DESC · 31 ms</span>
+                  <div class="p-track"><span class="p-fill w-24"></span></div>
+                </div>
+              </div>
+              <div class="plan-hint">
+                <span class="hint-label">Missing Index Suggestion</span>
+                <code>CREATE INDEX IX_Orders_OrderDate_Inc ON dbo.Orders (OrderDate) INCLUDE (CustomerId, TotalAmount);</code>
+              </div>
+            </div>
+          </div>
+
+          <!-- View 3: Step Debugger & Diff -->
+          <div class="window-body" data-pane="debug" hidden>
+            <div class="debug-view">
+              <div class="editor-area">
+                <div class="code-line"><span class="ln">14</span><span class="kw">CREATE OR ALTER PROCEDURE</span> <span class="id">dbo.usp_SettleInvoice</span> (<span class="id">@InvoiceId</span> <span class="kw">bigint</span>) <span class="kw">AS</span></div>
+                <div class="code-line"><span class="ln">15</span><span class="kw">BEGIN</span></div>
+                <div class="code-line bp-active"><span class="ln">16</span>  <span class="kw">DECLARE</span> <span class="id">@Balance</span> <span class="kw">decimal</span>(19,4) = <span class="fn">dbo.fn_GetBalance</span>(<span class="id">@InvoiceId</span>);</div>
+                <div class="code-line"><span class="ln">17</span>  <span class="kw">IF</span> <span class="id">@Balance</span> &gt; 0 <span class="kw">COMMIT TRANSACTION</span>;</div>
+                <div class="code-line"><span class="ln">18</span><span class="kw">END</span>;</div>
+              </div>
+              <div class="debug-bar">
+                <div class="d-metric"><span>Breakpoint</span><strong>Line 16 · Paused</strong></div>
+                <div class="d-metric"><span>@InvoiceId</span><strong>904812</strong></div>
+                <div class="d-metric"><span>@Balance</span><strong>1,420.5000</strong></div>
+                <div class="d-metric"><span>Environment Guard</span><strong>PROD Write Protected</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEASURED BENCHMARKS (SPACIOUS 3x2 GRID) -->
+    <section id="benchmarks" class="bench-wrap" aria-label="Measured performance benchmarks">
+      <div class="section-head">
+        <h2>Measured performance</h2>
+        <p>Verified on SQL Server 2022 &amp; PostgreSQL 16 (600 tables, 400 procedures, 12,023-line proc, 1M-row query).</p>
+      </div>
+
+      <div class="bench-grid">
+        <div class="bench-card">
+          <div class="bench-row">
+            <span class="bench-val">5.9<small> ms</small></span>
+            <span class="bench-gate">target ≤ 16 ms</span>
+          </div>
+          <p class="bench-title">Typing latency (p95) in 12k-line procedure</p>
+          <div class="bench-bar"><span class="bench-fill b-sky"></span></div>
+        </div>
+
+        <div class="bench-card">
+          <div class="bench-row">
+            <span class="bench-val">37.4<small> ms</small></span>
+            <span class="bench-gate">target ≤ 150 ms</span>
+          </div>
+          <p class="bench-title">Tier-2 ScriptDom AST completion (p95)</p>
+          <div class="bench-bar"><span class="bench-fill b-indigo"></span></div>
+        </div>
+
+        <div class="bench-card">
+          <div class="bench-row">
+            <span class="bench-val">229<small> ms</small></span>
+            <span class="bench-gate">target ≤ 300 ms</span>
+          </div>
+          <p class="bench-title">1M-row query: first Arrow batch painted</p>
+          <div class="bench-bar"><span class="bench-fill b-emerald"></span></div>
+        </div>
+
+        <div class="bench-card">
+          <div class="bench-row">
+            <span class="bench-val">1.25<small> s</small></span>
+            <span class="bench-gate">target ≤ 1.50 s</span>
+          </div>
+          <p class="bench-title">Cold start to interactive editor</p>
+          <div class="bench-bar"><span class="bench-fill b-blue"></span></div>
+        </div>
+
+        <div class="bench-card">
+          <div class="bench-row">
+            <span class="bench-val">54.6<small> ms</small></span>
+            <span class="bench-gate">target ≤ 100 ms</span>
+          </div>
+          <p class="bench-title">Full AST diagnostics on 12k-line procedure</p>
+          <div class="bench-bar"><span class="bench-fill b-violet"></span></div>
+        </div>
+
+        <div class="bench-card">
+          <div class="bench-row">
+            <span class="bench-val">1.9<small> ms</small></span>
+            <span class="bench-gate">1 roundtrip</span>
+          </div>
+          <p class="bench-title">SQL Server live database switch overhead</p>
+          <div class="bench-bar"><span class="bench-fill b-teal"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FIRST LAUNCH & VERIFICATION -->
+    <section id="install" class="install">
+      <div class="section-head">
+        <h2>First launch &amp; verification</h2>
+        <p>The installers are not code-signed yet, so your OS will ask you to confirm once.</p>
+      </div>
+
+      <div class="accordion-grid">
+        <details data-os="windows">
+          <summary>Windows: “Windows protected your PC”</summary>
+          <p>Click <b>More info</b>, then <b>Run anyway</b>.</p>
+        </details>
+        <details data-os="macos">
+          <summary>macOS: “Querithm can’t be opened”</summary>
+          <ol>
+            <li>Open the .dmg and drag Querithm to Applications.</li>
+            <li>Open Querithm once and close the warning.</li>
+            <li>Go to <b>System Settings → Privacy &amp; Security</b>, scroll down and click <b>Open Anyway</b>.</li>
+          </ol>
+          <p>If macOS says the app “is damaged”, run this in Terminal, then open it again:</p>
+          <pre><code>xattr -dr com.apple.quarantine /Applications/Querithm.app</code></pre>
+        </details>
+        <details data-os="linux">
+          <summary>Linux: AppImage and packages</summary>
+          <pre><code>chmod +x Querithm-linux-x64.AppImage
 ./Querithm-linux-x64.AppImage
 
 sudo apt install ./Querithm-linux-x64.deb   # Debian / Ubuntu
 sudo dnf install ./Querithm-linux-x64.rpm   # Fedora / RHEL</code></pre>
-      </details>
-      <details>
-        <summary>Verify your download</summary>
-        <p>Every release has a <a href="https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/SHA256SUMS.txt">SHA256SUMS.txt</a>. Compare it with:</p>
-        <pre><code>sha256sum Querithm-*                     # Linux
+        </details>
+        <details>
+          <summary>Verify your download (SHA-256)</summary>
+          <p>Every release has a <a href="https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/SHA256SUMS.txt">SHA256SUMS.txt</a>. Compare it with:</p>
+          <pre><code>sha256sum Querithm-*                     # Linux
 shasum -a 256 Querithm-*                 # macOS
 Get-FileHash .\Querithm-windows-x64-setup.exe   # Windows PowerShell</code></pre>
-      </details>
+        </details>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>Download counts come from GitHub’s public release data. They count downloads, not people.</p>
-    <p>This page sets no cookies and runs no analytics.</p>
+    <div class="contact-card">
+      <div class="contact-text">
+        <strong>Questions, feedback, or bug reports?</strong>
+        <span>Get in touch directly via email.</span>
+      </div>
+      <a class="contact-btn" href="mailto:dev.taosif.net@gmail.com">
+        <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M3 4a2 2 0 0 0-2 2v1.161l8.441 4.221a1.25 1.25 0 0 0 1.118 0L19 7.162V6a2 2 0 0 0-2-2H3Z"/><path d="m19 8.839-7.77 3.885a2.75 2.75 0 0 1-2.46 0L1 8.839V14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.839Z"/></svg>
+        <span>dev.taosif.net@gmail.com</span>
+      </a>
+    </div>
+    <p class="footer-author">Querithm · Developed by <strong>Taosif Bin Murtaza</strong></p>
+    <p>Download counts come from GitHub’s public release data. This page sets no cookies and runs no analytics.</p>
   </footer>
 </body>
 </html>
