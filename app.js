@@ -175,13 +175,14 @@ function render(releases) {
     el("primary-meta").textContent = `Version ${version}`;
   }
 
-  // Counts cover every release; only installers are counted, not SHA256SUMS.txt.
+  // Counts cover every release and include in-app updates (the app downloads the same installers, or the macOS
+  // .app.tar.gz); SHA256SUMS.txt, latest.json and the updater's .sig files are not downloads.
   const perOs = { windows: 0, macos: 0, linux: 0 };
   for (const r of releases) {
     if (r.draft) continue;
     for (const a of r.assets) {
       const m = /^Querithm-(windows|macos|linux)-/.exec(a.name);
-      if (m) perOs[m[1]] += a.count;
+      if (m && !a.name.endsWith(".sig")) perOs[m[1]] += a.count;
     }
   }
   const total = perOs.windows + perOs.macos + perOs.linux;

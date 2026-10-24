@@ -22,6 +22,14 @@ These links always point to the newest release:
 
 Each release also includes `SHA256SUMS.txt`.
 
+## In-app updates
+
+Installed copies of Querithm update themselves: they read `latest.json` from the newest release
+(`releases/latest/download/latest.json`) and show an **Update** button when a newer version exists. The update
+packages are the installers above, plus `Querithm-macos-*.app.tar.gz` for macOS. Each has a `.sig` file, the minisign
+signature the app checks before installing. Pre-releases have no effect on installed apps because they never become
+"latest". Download counts on the page include these in-app updates.
+
 ## How releases get here
 
 Pushing a `v*` tag in the source repository runs its `release` workflow. The workflow builds the installers, renames them
