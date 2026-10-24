@@ -1179,16 +1179,6 @@ footer {
   box-shadow: 0 8px 20px -4px rgba(37, 99, 235, 0.35);
 }
 
-.footer-author {
-  color: var(--text-secondary);
-  font-size: 14px;
-  margin-bottom: 6px;
-}
-
-.footer-author strong {
-  color: var(--accent);
-}
-
 footer p {
   margin: 4px 0;
 }
