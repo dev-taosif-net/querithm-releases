@@ -159,13 +159,14 @@
             </div>
             <div>
               <h2>macOS</h2>
-              <p class="req">Apple Silicon and Intel</p>
+              <p class="req">Apple Silicon and Intel · version 0.2.0</p>
             </div>
           </div>
           <ul>
-            <li><a data-asset="Querithm-macos-arm64.dmg" href="https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-macos-arm64.dmg">Apple Silicon (M1 and later)</a><span class="size"></span></li>
-            <li><a data-asset="Querithm-macos-x64.dmg" href="https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-macos-x64.dmg">Intel</a><span class="size"></span></li>
+            <li><a data-asset="Querithm-macos-arm64.dmg" data-tag="v0.2.0" href="https://github.com/dev-taosif-net/querithm-releases/releases/download/v0.2.0/Querithm-macos-arm64.dmg">Apple Silicon (M1 and later)</a><span class="size"></span></li>
+            <li><a data-asset="Querithm-macos-x64.dmg" data-tag="v0.2.0" href="https://github.com/dev-taosif-net/querithm-releases/releases/download/v0.2.0/Querithm-macos-x64.dmg">Intel</a><span class="size"></span></li>
           </ul>
+          <p class="card-note">macOS builds are paused. 0.2.0 is the newest version for Mac; newer releases are for Windows and Linux.</p>
           <p class="count" hidden></p>
         </article>
 
@@ -403,7 +404,7 @@ sudo dnf install ./Querithm-linux-x64.rpm   # Fedora / RHEL</code></pre>
         </details>
         <details>
           <summary>Verify your download (SHA-256)</summary>
-          <p>Every release has a <a href="https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/SHA256SUMS.txt">SHA256SUMS.txt</a>. Compare it with:</p>
+          <p>Every release has a <a href="https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/SHA256SUMS.txt">SHA256SUMS.txt</a> (macOS: the <a href="https://github.com/dev-taosif-net/querithm-releases/releases/download/v0.2.0/SHA256SUMS.txt">0.2.0 one</a>). Compare it with:</p>
           <pre><code>sha256sum Querithm-*                     # Linux
 shasum -a 256 Querithm-*                 # macOS
 Get-FileHash .\Querithm-windows-x64-setup.exe   # Windows PowerShell</code></pre>

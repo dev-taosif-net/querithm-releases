@@ -5,6 +5,8 @@
 
 const REPO = "dev-taosif-net/querithm-releases";
 const LATEST = `https://github.com/${REPO}/releases/latest/download/`;
+// macOS builds are paused: Mac links name the last macOS release, so a newer Windows/Linux-only release cannot break them.
+const MAC_TAG = "v0.2.0";
 const CACHE_KEY = "querithm-releases-v1";
 const CACHE_MS = 15 * 60 * 1000; // the unauthenticated API allows 60 requests per hour per IP
 const MAX_PAGES = 10;
@@ -14,8 +16,8 @@ const OS_LABEL = { windows: "Windows", macos: "macOS", linux: "Linux" };
 // Primary button per platform, plus the alternatives listed under it.
 const CHOICES = {
   windows: { primary: "Querithm-windows-x64-setup.exe", label: "Windows 64-bit", alts: [["MSI package", "Querithm-windows-x64.msi"]] },
-  "macos-arm64": { primary: "Querithm-macos-arm64.dmg", label: "macOS, Apple Silicon", alts: [["Intel Mac", "Querithm-macos-x64.dmg"]] },
-  "macos-x64": { primary: "Querithm-macos-x64.dmg", label: "macOS, Intel", alts: [["Apple Silicon", "Querithm-macos-arm64.dmg"]] },
+  "macos-arm64": { primary: "Querithm-macos-arm64.dmg", label: "macOS, Apple Silicon", tag: MAC_TAG, alts: [["Intel Mac", "Querithm-macos-x64.dmg"]] },
+  "macos-x64": { primary: "Querithm-macos-x64.dmg", label: "macOS, Intel", tag: MAC_TAG, alts: [["Apple Silicon", "Querithm-macos-arm64.dmg"]] },
   linux: { primary: "Querithm-linux-x64.AppImage", label: "Linux x86-64, AppImage", alts: [[".deb", "Querithm-linux-x64.deb"], [".rpm", "Querithm-linux-x64.rpm"]] },
 };
 
@@ -49,11 +51,17 @@ function el(id) {
   return document.getElementById(id);
 }
 
+// A link of a pinned release (data-tag) or of the latest one.
+function setAsset(a, asset, tag) {
+  a.href = tag ? `https://github.com/${REPO}/releases/download/${tag}/${asset}` : LATEST + asset;
+  a.dataset.asset = asset;
+  if (tag) a.dataset.tag = tag;
+}
+
 function showPrimary(choiceKey) {
   const choice = CHOICES[choiceKey];
   const btn = el("primary");
-  btn.href = LATEST + choice.primary;
-  btn.dataset.asset = choice.primary;
+  setAsset(btn, choice.primary, choice.tag);
   btn.textContent = `Download for ${OS_LABEL[choiceKey.split("-")[0]]}`;
   el("primary-meta").textContent = choice.label;
 
@@ -62,8 +70,7 @@ function showPrimary(choiceKey) {
   choice.alts.forEach(([text, asset], i) => {
     if (i > 0) alt.append(" · ");
     const a = document.createElement("a");
-    a.href = LATEST + asset;
-    a.dataset.asset = asset;
+    setAsset(a, asset, choice.tag);
     a.textContent = text;
     alt.append(a);
   });
@@ -155,10 +162,14 @@ function render(releases) {
     return;
   }
 
-  const version = latest.tag.replace(/^v/, "");
-  const byName = new Map(latest.assets.map((a) => [a.name, a]));
+  // A link with data-tag looks in that release (macOS stays on MAC_TAG); every other link in the latest one.
+  const releaseOf = (a) => (a.dataset.tag ? releases.find((r) => !r.draft && r.tag === a.dataset.tag) : latest);
+  const assetOf = (a) => {
+    const release = releaseOf(a);
+    return release && release.assets.find((x) => x.name === a.dataset.asset);
+  };
   assetLinks.forEach((a) => {
-    const asset = byName.get(a.dataset.asset);
+    const asset = assetOf(a);
     if (!asset) {
       disableLink(a);
       return;
@@ -168,11 +179,11 @@ function render(releases) {
   });
 
   const primary = el("primary");
-  const primaryAsset = byName.get(primary.dataset.asset);
+  const primaryAsset = assetOf(primary);
   if (primaryAsset) {
-    el("primary-meta").textContent += ` · version ${version} · ${formatSize(primaryAsset.size)}`;
+    el("primary-meta").textContent += ` · version ${releaseOf(primary).tag.replace(/^v/, "")} · ${formatSize(primaryAsset.size)}`;
   } else {
-    el("primary-meta").textContent = `Version ${version}`;
+    el("primary-meta").textContent = `Version ${latest.tag.replace(/^v/, "")}`;
   }
 
   // Counts cover every release and include in-app updates (the app downloads the same installers, or the macOS
@@ -253,7 +264,7 @@ async function main() {
   try {
     render(await fetchReleases());
   } catch {
-    // Rate-limited or offline: the static links still point at the latest release.
+    // Rate-limited or offline: the static links still point at their release.
   }
 }
 

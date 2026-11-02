@@ -561,6 +561,13 @@ h1 {
   white-space: nowrap;
 }
 
+.card-note {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
 .count {
   margin: 10px 0 0;
   padding-top: 10px;

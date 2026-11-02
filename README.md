@@ -8,14 +8,15 @@ installers published under [Releases](https://github.com/dev-taosif-net/querithm
 
 **https://dev-taosif-net.github.io/querithm-releases/**
 
-These links always point to the newest release:
+The Windows and Linux links always point to the newest release. macOS builds are paused, so the macOS links point to
+0.2.0, the last macOS release:
 
 | Platform | File |
 |---|---|
 | Windows 10/11 (installer) | [Querithm-windows-x64-setup.exe](https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-windows-x64-setup.exe) |
 | Windows 10/11 (MSI) | [Querithm-windows-x64.msi](https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-windows-x64.msi) |
-| macOS, Apple Silicon | [Querithm-macos-arm64.dmg](https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-macos-arm64.dmg) |
-| macOS, Intel | [Querithm-macos-x64.dmg](https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-macos-x64.dmg) |
+| macOS, Apple Silicon (0.2.0) | [Querithm-macos-arm64.dmg](https://github.com/dev-taosif-net/querithm-releases/releases/download/v0.2.0/Querithm-macos-arm64.dmg) |
+| macOS, Intel (0.2.0) | [Querithm-macos-x64.dmg](https://github.com/dev-taosif-net/querithm-releases/releases/download/v0.2.0/Querithm-macos-x64.dmg) |
 | Linux (AppImage) | [Querithm-linux-x64.AppImage](https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-linux-x64.AppImage) |
 | Debian / Ubuntu | [Querithm-linux-x64.deb](https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-linux-x64.deb) |
 | Fedora / RHEL | [Querithm-linux-x64.rpm](https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-linux-x64.rpm) |
@@ -29,6 +30,9 @@ Installed copies of Querithm update themselves: they read `latest.json` from the
 packages are the installers above, plus `Querithm-macos-*.app.tar.gz` for macOS. Each has a `.sig` file, the minisign
 signature the app checks before installing. Pre-releases have no effect on installed apps because they never become
 "latest". Download counts on the page include these in-app updates.
+
+Releases after 0.2.0 have no macOS files and no macOS entry in `latest.json`. A Mac on 0.2.0 finds no update package
+for itself: it keeps running 0.2.0, its automatic check stays silent and a manual check says there is no package for it.
 
 ## How releases get here
 
