@@ -5,8 +5,6 @@
 
 const REPO = "dev-taosif-net/querithm-releases";
 const LATEST = `https://github.com/${REPO}/releases/latest/download/`;
-// macOS builds are paused: Mac links name the last macOS release, so a newer Windows/Linux-only release cannot break them.
-const MAC_TAG = "v0.2.0";
 const CACHE_KEY = "querithm-releases-v1";
 const CACHE_MS = 15 * 60 * 1000; // the unauthenticated API allows 60 requests per hour per IP
 const MAX_PAGES = 10;
@@ -16,8 +14,8 @@ const OS_LABEL = { windows: "Windows", macos: "macOS", linux: "Linux" };
 // Primary button per platform, plus the alternatives listed under it.
 const CHOICES = {
   windows: { primary: "Querithm-windows-x64-setup.exe", label: "Windows 64-bit", alts: [["MSI package", "Querithm-windows-x64.msi"]] },
-  "macos-arm64": { primary: "Querithm-macos-arm64.dmg", label: "macOS, Apple Silicon", tag: MAC_TAG, alts: [["Intel Mac", "Querithm-macos-x64.dmg"]] },
-  "macos-x64": { primary: "Querithm-macos-x64.dmg", label: "macOS, Intel", tag: MAC_TAG, alts: [["Apple Silicon", "Querithm-macos-arm64.dmg"]] },
+  "macos-arm64": { primary: "Querithm-macos-arm64.dmg", label: "macOS, Apple Silicon", alts: [["Intel Mac", "Querithm-macos-x64.dmg"]] },
+  "macos-x64": { primary: "Querithm-macos-x64.dmg", label: "macOS, Intel", alts: [["Apple Silicon", "Querithm-macos-arm64.dmg"]] },
   linux: { primary: "Querithm-linux-x64.AppImage", label: "Linux x86-64, AppImage", alts: [[".deb", "Querithm-linux-x64.deb"], [".rpm", "Querithm-linux-x64.rpm"]] },
 };
 
@@ -162,7 +160,7 @@ function render(releases) {
     return;
   }
 
-  // A link with data-tag looks in that release (macOS stays on MAC_TAG); every other link in the latest one.
+  // A link with data-tag looks in that release; every other link in the latest one.
   const releaseOf = (a) => (a.dataset.tag ? releases.find((r) => !r.draft && r.tag === a.dataset.tag) : latest);
   const assetOf = (a) => {
     const release = releaseOf(a);
