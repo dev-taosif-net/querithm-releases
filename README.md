@@ -9,12 +9,14 @@ installers published under [Releases](https://github.com/dev-taosif-net/querithm
 
 **https://dev-taosif-net.github.io/querithm-releases/**
 
-The links always point to the newest release. macOS builds are paused, so there is no macOS download yet.
+The links always point to the newest release:
 
 | Platform | File |
 |---|---|
 | Windows 10/11 (installer) | [Querithm-windows-x64-setup.exe](https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-windows-x64-setup.exe) |
 | Windows 10/11 (MSI) | [Querithm-windows-x64.msi](https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-windows-x64.msi) |
+| macOS, Apple Silicon | [Querithm-macos-arm64.dmg](https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-macos-arm64.dmg) |
+| macOS, Intel | [Querithm-macos-x64.dmg](https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-macos-x64.dmg) |
 | Linux (AppImage) | [Querithm-linux-x64.AppImage](https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-linux-x64.AppImage) |
 | Debian / Ubuntu | [Querithm-linux-x64.deb](https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-linux-x64.deb) |
 | Fedora / RHEL | [Querithm-linux-x64.rpm](https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-linux-x64.rpm) |
@@ -25,7 +27,7 @@ Each release also includes `SHA256SUMS.txt`.
 
 Installed copies of Querithm update themselves: they read `latest.json` from the newest release
 (`releases/latest/download/latest.json`) and show an **Update** button when a newer version exists. The update
-packages are the installers above. Each has a `.sig` file, the minisign
+packages are the installers above, plus `Querithm-macos-*.app.tar.gz` for macOS. Each has a `.sig` file, the minisign
 signature the app checks before installing. Pre-releases have no effect on installed apps because they never become
 "latest". Download counts on the page include these in-app updates.
 
