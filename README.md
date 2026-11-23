@@ -1,13 +1,13 @@
 # Querithm releases
 
-Installers for [Querithm](https://dev-taosif-net.github.io/querithm-releases/), a desktop SQL IDE for SQL Server,
-PostgreSQL, MySQL / MariaDB, SQLite and DuckDB. The source code is at
+Installers for [Querithm](https://querithm.app), an offline-first desktop SQL IDE for SQL Server,
+PostgreSQL, MySQL / MariaDB, Oracle Database, SQLite and DuckDB. The source code is at
 [dev-taosif-net/querithm](https://github.com/dev-taosif-net/querithm) (public at times). This repository holds only the download page and the
 installers published under [Releases](https://github.com/dev-taosif-net/querithm-releases/releases).
 
 ## Download
 
-**https://dev-taosif-net.github.io/querithm-releases/**
+**https://querithm.app**
 
 The links always point to the newest release:
 
@@ -22,6 +22,8 @@ The links always point to the newest release:
 | Fedora / RHEL | [Querithm-linux-x64.rpm](https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-linux-x64.rpm) |
 
 Each release also includes `SHA256SUMS.txt`.
+
+> Note: Oracle Database is available on Windows, Linux and Apple Silicon macOS (its driver has no Intel macOS build).
 
 ## In-app updates
 

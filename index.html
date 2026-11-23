@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src https://api.github.com; base-uri 'none'; form-action 'none'">
   <meta name="referrer" content="no-referrer">
-  <title>Querithm — Modern SQL IDE for SQL Server &amp; PostgreSQL</title>
-  <meta name="description" content="Download Querithm, a desktop SQL IDE for SQL Server and PostgreSQL developed by Taosif Bin Murtaza, for Windows, macOS and Linux.">
+  <title>Querithm — Modern SQL IDE for SQL Server, PostgreSQL, MySQL, Oracle, SQLite &amp; DuckDB</title>
+  <meta name="description" content="Download Querithm, an offline-first desktop SQL IDE for SQL Server, PostgreSQL, MySQL / MariaDB, Oracle Database, SQLite and DuckDB, for Windows, macOS and Linux.">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icon.png">
   <link rel="stylesheet" href="style.css">
@@ -60,6 +60,7 @@
 
       <div class="top-nav">
         <a class="nav-item" href="#platforms">Downloads</a>
+        <a class="nav-item" href="#features">Features</a>
         <a class="nav-item" href="#preview">Workspace</a>
         <a class="nav-item" href="#benchmarks">Benchmarks</a>
         <a class="nav-item" href="#install">First launch</a>
@@ -118,9 +119,18 @@
       </div>
 
       <p class="tagline">
-        A modern, offline-first desktop SQL IDE for <strong>SQL Server</strong> and <strong>PostgreSQL</strong>.<br>
-        Instant AST autocomplete, 1M-row Apache Arrow grids, and credentials kept strictly in your OS keyring.
+        A modern, offline-first desktop SQL IDE for <strong>SQL Server</strong>, <strong>PostgreSQL</strong>, <strong>MySQL / MariaDB</strong>, <strong>Oracle Database</strong>, <strong>SQLite</strong> and <strong>DuckDB</strong>.<br>
+        Instant AST autocomplete, 1M-row Apache Arrow grids, visual execution plans, and credentials kept strictly in your OS keyring.
       </p>
+
+      <ul class="engine-pills" aria-label="Supported database engines">
+        <li>SQL Server</li>
+        <li>PostgreSQL</li>
+        <li>MySQL / MariaDB</li>
+        <li>Oracle Database</li>
+        <li>SQLite</li>
+        <li>DuckDB</li>
+      </ul>
 
       <div class="cta">
         <a id="primary" class="btn-primary" href="#platforms">Download</a>
@@ -166,6 +176,7 @@
             <li><a data-asset="Querithm-macos-arm64.dmg" href="https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-macos-arm64.dmg">Apple Silicon (M1 and later)</a><span class="size"></span></li>
             <li><a data-asset="Querithm-macos-x64.dmg" href="https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-macos-x64.dmg">Intel</a><span class="size"></span></li>
           </ul>
+          <p class="card-note">Oracle Database requires Apple Silicon on macOS.</p>
           <p class="count" hidden></p>
         </article>
 
@@ -185,6 +196,46 @@
             <li><a data-asset="Querithm-linux-x64.rpm" href="https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/Querithm-linux-x64.rpm">Fedora / RHEL (.rpm)</a><span class="size"></span></li>
           </ul>
           <p class="count" hidden></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- FEATURES & SUPPORTED ENGINES -->
+    <section id="features" class="features-wrap" aria-label="Features and supported engines">
+      <div class="section-head">
+        <h2>Built for daily database work</h2>
+        <p>One fast native workspace across six engines, with zero telemetry and full offline support.</p>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-card">
+          <h3>Six database engines</h3>
+          <p>SQL Server, PostgreSQL, MySQL / MariaDB and Oracle Database (TCPS by default) over direct TLS or SSH tunnels, plus local SQLite and DuckDB files (read-only until you allow writes) or in-memory tabs.</p>
+        </article>
+
+        <article class="feature-card">
+          <h3>Two-tier AST autocomplete</h3>
+          <p>Dialect-aware Monaco editor for T-SQL, PostgreSQL, MySQL, Oracle SQL &amp; PL/SQL, SQLite and DuckDB. Frequency-ranked suggestions, CTE &amp; temp-table columns, parameter hints, Find usages and Rename.</p>
+        </article>
+
+        <article class="feature-card">
+          <h3>1M-row grid &amp; notebooks</h3>
+          <p>Streaming Apache Arrow grid with inline editing, tabbed, stacked or side-by-side result sets, CSV / JSON / XLSX import &amp; export, charts, cell viewer and <code>.sqlbook</code> notebooks.</p>
+        </article>
+
+        <article class="feature-card">
+          <h3>Plans, compare &amp; monitoring</h3>
+          <p>Visual execution plans (estimated on every engine; actual on SQL Server, PostgreSQL, DuckDB and Oracle), schema &amp; data compare, Activity Monitor, SQL Server Trace and PostgreSQL step debugger.</p>
+        </article>
+
+        <article class="feature-card">
+          <h3>Production safety &amp; groups</h3>
+          <p>Organize servers into connection groups with color-coded Dev / Staging / Prod environments. Engine-enforced production &amp; destructive-statement guards keep mistakes out of Prod.</p>
+        </article>
+
+        <article class="feature-card">
+          <h3>Offline-first &amp; private</h3>
+          <p>Fonts, editor, grid and plan renderer are bundled. Passwords and SSH keys stay in your OS keyring, and signed in-app updates keep Querithm current (optional in Settings).</p>
         </article>
       </div>
     </section>
