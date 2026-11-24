@@ -1,3 +1,10 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="brand/querithm-wordmark-dark.svg">
+    <img src="brand/querithm-wordmark.svg" alt="Querithm — Database &amp; SQL Development IDE" width="420">
+  </picture>
+</p>
+
 # Querithm releases
 
 Installers for [Querithm](https://querithm.app), an offline-first desktop SQL IDE for SQL Server,
