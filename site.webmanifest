@@ -1,0 +1,21 @@
+{
+  "name": "Querithm — Offline Desktop SQL IDE",
+  "short_name": "Querithm",
+  "description": "Free, offline-first desktop SQL IDE for SQL Server, PostgreSQL, MySQL / MariaDB, Oracle Database, SQLite and DuckDB on Windows, macOS and Linux.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#f8fafc",
+  "theme_color": "#f8fafc",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

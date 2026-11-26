@@ -52,7 +52,7 @@ pre-releases and do not replace the "latest" links.
 
 ## The page
 
-`index.html`, `style.css` and `app.js` are served by GitHub Pages from the root of `main`. The page is static and needs
+`index.html`, `style.css`, `app.js`, `robots.txt`, `sitemap.xml`, `site.webmanifest` and `404.html` are served by GitHub Pages from the root of `main`. The page is static and needs
 no build step. It reads version, file sizes and download counts from the public GitHub API. If the API is unreachable or
 rate-limited, the numbers are hidden and the download links still work. The page loads nothing from third parties, sets
 no cookies and runs no analytics.

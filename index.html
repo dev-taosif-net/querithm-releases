@@ -3,26 +3,179 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src https://api.github.com; base-uri 'none'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; manifest-src 'self'; connect-src https://api.github.com; base-uri 'none'; form-action 'none'">
   <meta name="referrer" content="no-referrer">
-  <title>Querithm — Modern SQL IDE for SQL Server, PostgreSQL, MySQL, Oracle, SQLite &amp; DuckDB</title>
-  <meta name="description" content="Download Querithm, an offline-first desktop SQL IDE for SQL Server, PostgreSQL, MySQL / MariaDB, Oracle Database, SQLite and DuckDB, for Windows, macOS and Linux.">
+  <title>Querithm — Offline SQL IDE for SQL Server, PostgreSQL &amp; MySQL</title>
+  <meta name="description" content="Download Querithm, a free offline-first desktop SQL IDE for SQL Server, PostgreSQL, MySQL, Oracle, SQLite &amp; DuckDB on Windows, macOS, and Linux.">
+  <meta name="keywords" content="Querithm, SQL IDE, offline SQL IDE, desktop SQL client, SQL Server IDE, PostgreSQL IDE, MySQL client, MariaDB client, Oracle Database IDE, SQLite client, DuckDB IDE, T-SQL autocomplete, visual execution plan, database IDE">
+  <meta name="author" content="Querithm">
+  <meta name="application-name" content="Querithm">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://querithm.app/">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icon.png">
-  <meta name="theme-color" content="#0f1117">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#f8fafc">
+  <meta property="og:locale" content="en_US">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Querithm">
-  <meta property="og:title" content="Querithm — Database &amp; SQL Development IDE">
-  <meta property="og:description" content="An offline-first desktop SQL IDE for SQL Server, PostgreSQL, MySQL / MariaDB, Oracle Database, SQLite and DuckDB, for Windows, macOS and Linux.">
+  <meta property="og:title" content="Querithm — Offline SQL IDE for SQL Server, PostgreSQL, MySQL, Oracle, SQLite &amp; DuckDB">
+  <meta property="og:description" content="Free offline-first desktop SQL IDE with AST autocomplete, 1M-row Apache Arrow grid, visual execution plans, and OS keyring security for Windows, macOS &amp; Linux.">
   <meta property="og:url" content="https://querithm.app/">
   <meta property="og:image" content="https://querithm.app/og-image.png">
+  <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="The Querithm logo and name">
+  <meta property="og:image:alt" content="Querithm — Offline-first desktop SQL IDE for SQL Server, PostgreSQL, MySQL, Oracle, SQLite and DuckDB">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Querithm — Offline SQL IDE for SQL Server, PostgreSQL &amp; MySQL">
+  <meta name="twitter:description" content="Free offline-first desktop SQL IDE for SQL Server, PostgreSQL, MySQL, Oracle, SQLite &amp; DuckDB with AST autocomplete and 1M-row Arrow grids.">
+  <meta name="twitter:image" content="https://querithm.app/og-image.png">
+  <meta name="twitter:image:alt" content="Querithm — Offline-first desktop SQL IDE for SQL Server, PostgreSQL, MySQL, Oracle, SQLite and DuckDB">
   <link rel="stylesheet" href="style.css">
   <script src="app.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://querithm.app/#website",
+        "url": "https://querithm.app/",
+        "name": "Querithm",
+        "alternateName": "Querithm SQL IDE",
+        "description": "Free, offline-first desktop SQL IDE for SQL Server, PostgreSQL, MySQL / MariaDB, Oracle Database, SQLite, and DuckDB.",
+        "inLanguage": "en",
+        "publisher": {
+          "@id": "https://querithm.app/#organization"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://querithm.app/#organization",
+        "name": "Querithm",
+        "url": "https://querithm.app/",
+        "email": "dev.taosif.net@gmail.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://querithm.app/icon.png",
+          "width": 512,
+          "height": 512
+        },
+        "sameAs": [
+          "https://github.com/dev-taosif-net/querithm-releases"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://querithm.app/#webpage",
+        "url": "https://querithm.app/",
+        "name": "Querithm — Offline SQL IDE for SQL Server, PostgreSQL & MySQL",
+        "description": "Download Querithm, a free offline-first desktop SQL IDE for SQL Server, PostgreSQL, MySQL, Oracle, SQLite & DuckDB on Windows, macOS, and Linux.",
+        "isPartOf": {
+          "@id": "https://querithm.app/#website"
+        },
+        "about": {
+          "@id": "https://querithm.app/#software"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://querithm.app/og-image.png",
+          "width": 1200,
+          "height": 630
+        },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://querithm.app/#software",
+        "name": "Querithm",
+        "alternateName": "Querithm SQL IDE",
+        "description": "Free, offline-first desktop SQL IDE for SQL Server, PostgreSQL, MySQL / MariaDB, Oracle Database, SQLite, and DuckDB with AST autocomplete, 1M-row Apache Arrow grids, visual execution plans, schema and data compare, Activity Monitor, SQL Server Trace, and PostgreSQL step debugger.",
+        "url": "https://querithm.app/",
+        "downloadUrl": "https://querithm.app/#platforms",
+        "installUrl": "https://querithm.app/#platforms",
+        "releaseNotes": "https://github.com/dev-taosif-net/querithm-releases/releases",
+        "applicationCategory": "DeveloperApplication",
+        "applicationSubCategory": "Database Management & SQL IDE",
+        "operatingSystem": "Windows 10, Windows 11, macOS, Linux",
+        "processorRequirements": "x86-64, Apple Silicon (ARM64)",
+        "softwareVersion": "0.1.6",
+        "license": "https://www.gnu.org/licenses/gpl-3.0.html",
+        "isAccessibleForFree": true,
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        },
+        "image": "https://querithm.app/og-image.png",
+        "screenshot": "https://querithm.app/og-image.png",
+        "author": {
+          "@id": "https://querithm.app/#organization"
+        },
+        "publisher": {
+          "@id": "https://querithm.app/#organization"
+        },
+        "featureList": [
+          "Six database engines: SQL Server, PostgreSQL, MySQL / MariaDB, Oracle Database, SQLite, and DuckDB",
+          "Two-tier AST SQL autocomplete for T-SQL, PostgreSQL, MySQL, Oracle SQL & PL/SQL, SQLite, and DuckDB",
+          "Streaming 1M-row Apache Arrow grid with inline editing, charts, notebooks, and CSV / JSON / XLSX import and export",
+          "Visual execution plans with missing-index suggestions, schema and data compare, Activity Monitor, SQL Server Trace, and PostgreSQL step debugger",
+          "Production and destructive-statement safety guards with Dev, Staging, and Prod connection groups",
+          "Offline-first desktop architecture with zero telemetry and OS keyring credential storage"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://querithm.app/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What databases does Querithm support?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Querithm supports six database engines in one native workspace: Microsoft SQL Server, PostgreSQL, MySQL / MariaDB, Oracle Database (over TCPS by default), SQLite, and DuckDB, with direct TLS and SSH tunnel connections plus local file and in-memory tabs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Querithm free and offline-first?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Querithm is free to download under the GNU GPL-3.0 license, requires no account, collects zero telemetry, and runs fully offline. Fonts, the Monaco SQL editor, the Apache Arrow grid, and the execution plan renderer are all bundled locally."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which operating systems does Querithm run on?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Querithm runs natively on Windows 10 and 11 (64-bit .exe installer and .msi package), macOS (Apple Silicon and Intel .dmg), and Linux x86-64 (AppImage, Debian/Ubuntu .deb, and Fedora/RHEL .rpm). On macOS, Oracle Database connections require Apple Silicon."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Querithm protect database passwords and production environments?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Database passwords and SSH keys are stored strictly in your operating system keyring and never leave your machine. Connection groups let you color-code Dev, Staging, and Prod servers with engine-enforced production and destructive-statement guards."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How fast is Querithm on large SQL files and million-row results?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "On benchmarked SQL Server 2022 and PostgreSQL 16 workloads (600 tables, 400 stored procedures, a 12,023-line procedure, and a 1M-row query), Querithm achieves 5.9 ms p95 typing latency, 37.4 ms p95 AST autocomplete, 229 ms to paint the first Apache Arrow batch, and 1.25 s cold start."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <!-- Clean, Smooth Animated Light Background -->
@@ -62,6 +215,7 @@
         <a class="nav-item" href="#preview">Workspace</a>
         <a class="nav-item" href="#benchmarks">Benchmarks</a>
         <a class="nav-item" href="#install">First launch</a>
+        <a class="nav-item" href="#faq">FAQ</a>
         <a class="nav-item" href="mailto:dev.taosif.net@gmail.com">Contact</a>
       </div>
     </nav>
@@ -121,7 +275,8 @@
     </section>
 
     <!-- PLATFORM DOWNLOADS (IMMEDIATELY ACCESSIBLE, SPACIOUS 3-COLUMN GRID) -->
-    <section id="platforms" class="platforms-wrap" aria-label="All downloads">
+    <section id="platforms" class="platforms-wrap" aria-labelledby="platforms-heading">
+      <h2 id="platforms-heading" class="platforms-heading">Download Querithm for Windows, macOS &amp; Linux</h2>
       <div class="platforms">
         <article class="card" data-os="windows">
           <div class="card-top">
@@ -129,7 +284,7 @@
               <svg class="os-svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M3 3h8.5v8.5H3V3zm9.5 0H21v8.5h-8.5V3zM3 12.5h8.5V21H3v-8.5zm9.5 0H21V21h-8.5v-8.5z"/></svg>
             </div>
             <div>
-              <h2>Windows</h2>
+              <h3>Windows</h3>
               <p class="req">Windows 10 or 11, 64-bit</p>
             </div>
           </div>
@@ -146,7 +301,7 @@
               <svg class="os-svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.96 6.33c.67-.81 1.12-1.94 1-3.08-.96.04-2.13.64-2.82 1.45-.61.7-.15 1.86-.99 2.98 1.08.08 2.14-.54 2.81-1.35"/></svg>
             </div>
             <div>
-              <h2>macOS</h2>
+              <h3>macOS</h3>
               <p class="req">Apple Silicon and Intel</p>
             </div>
           </div>
@@ -164,7 +319,7 @@
               <svg class="os-svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2C9.24 2 7 4.24 7 7c0 1.65.79 3.11 2.02 4.03C7.17 12.44 6 14.84 6 17.5 6 20 8.5 22 12 22s6-2 6-4.5c0-2.66-1.17-5.06-3.02-6.47C16.21 10.11 17 8.65 17 7c0-2.76-2.24-5-5-5zm-1.5 4.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm3 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2zM12 10c1.1 0 2 .45 2 1s-.9 1-2 1-2-.45-2-1 .9-1 2-1zm0 4c2.21 0 4 1.57 4 3.5S14.21 21 12 21s-4-1.57-4-3.5S9.79 14 12 14z"/></svg>
             </div>
             <div>
-              <h2>Linux</h2>
+              <h3>Linux</h3>
               <p class="req">x86-64, WebKitGTK 4.1</p>
             </div>
           </div>
@@ -219,7 +374,11 @@
     </section>
 
     <!-- SPACIOUS FULL-WIDTH WORKSPACE PREVIEW -->
-    <section id="preview" class="preview-section" aria-label="Querithm workspace preview">
+    <section id="preview" class="preview-section" aria-labelledby="preview-heading">
+      <div class="section-head">
+        <h2 id="preview-heading">Inside the Querithm SQL workspace</h2>
+        <p>Dialect-aware SQL editing, streaming 1M-row Apache Arrow grids, visual execution plans, and step debugging in one desktop window.</p>
+      </div>
       <div class="preview-shell">
         <div class="window-frame">
           <div class="window-bar">
@@ -227,9 +386,9 @@
               <span></span><span></span><span></span>
             </div>
             <div class="segmented-tabs" role="tablist" aria-label="Workspace view">
-              <button type="button" class="seg-btn active" role="tab" aria-selected="true" data-tab="query">Query &amp; 1M-Row Grid</button>
-              <button type="button" class="seg-btn" role="tab" aria-selected="false" data-tab="plan">Execution Plan</button>
-              <button type="button" class="seg-btn" role="tab" aria-selected="false" data-tab="debug">Debugger &amp; Diff</button>
+              <button type="button" id="tab-query" class="seg-btn active" role="tab" aria-selected="true" aria-controls="pane-query" data-tab="query">Query &amp; 1M-Row Grid</button>
+              <button type="button" id="tab-plan" class="seg-btn" role="tab" aria-selected="false" aria-controls="pane-plan" data-tab="plan">Execution Plan</button>
+              <button type="button" id="tab-debug" class="seg-btn" role="tab" aria-selected="false" aria-controls="pane-debug" data-tab="debug">Debugger &amp; Diff</button>
             </div>
             <div class="conn-indicator">
               <span class="conn-dot"></span>
@@ -238,7 +397,7 @@
           </div>
 
           <!-- View 1: Query & Grid -->
-          <div class="window-body active" data-pane="query">
+          <div id="pane-query" class="window-body active" role="tabpanel" aria-labelledby="tab-query" data-pane="query">
             <div class="editor-area">
               <div class="code-line"><span class="ln">1</span><span class="kw">WITH</span> <span class="id">RegionalSales</span> <span class="kw">AS</span> (</div>
               <div class="code-line"><span class="ln">2</span>  <span class="kw">SELECT</span> <span class="id">o.CustomerId</span>, <span class="fn">SUM</span>(<span class="id">o.TotalAmount</span>) <span class="kw">AS</span> <span class="id">AnnualSpend</span>, <span class="fn">COUNT</span>(*) <span class="kw">AS</span> <span class="id">OrderCount</span></div>
@@ -283,7 +442,7 @@
           </div>
 
           <!-- View 2: Execution Plan -->
-          <div class="window-body" data-pane="plan" hidden>
+          <div id="pane-plan" class="window-body" role="tabpanel" aria-labelledby="tab-plan" data-pane="plan" hidden>
             <div class="plan-view">
               <div class="plan-cards">
                 <div class="p-node">
@@ -315,7 +474,7 @@
           </div>
 
           <!-- View 3: Step Debugger & Diff -->
-          <div class="window-body" data-pane="debug" hidden>
+          <div id="pane-debug" class="window-body" role="tabpanel" aria-labelledby="tab-debug" data-pane="debug" hidden>
             <div class="debug-view">
               <div class="editor-area">
                 <div class="code-line"><span class="ln">14</span><span class="kw">CREATE OR ALTER PROCEDURE</span> <span class="id">dbo.usp_SettleInvoice</span> (<span class="id">@InvoiceId</span> <span class="kw">bigint</span>) <span class="kw">AS</span></div>
@@ -432,10 +591,41 @@ sudo dnf install ./Querithm-linux-x64.rpm   # Fedora / RHEL</code></pre>
         </details>
         <details>
           <summary>Verify your download (SHA-256)</summary>
-          <p>Every release has a <a href="https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/SHA256SUMS.txt">SHA256SUMS.txt</a>. Compare it with:</p>
+          <p>Every release has a <a href="https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/SHA256SUMS.txt" rel="noopener noreferrer">SHA256SUMS.txt</a>. Compare it with:</p>
           <pre><code>sha256sum Querithm-*                     # Linux
 shasum -a 256 Querithm-*                 # macOS
 Get-FileHash .\Querithm-windows-x64-setup.exe   # Windows PowerShell</code></pre>
+        </details>
+      </div>
+    </section>
+
+    <!-- FREQUENTLY ASKED QUESTIONS -->
+    <section id="faq" class="install faq" aria-labelledby="faq-heading">
+      <div class="section-head">
+        <h2 id="faq-heading">Frequently asked questions</h2>
+        <p>Quick answers about supported databases, offline privacy, licensing, and performance.</p>
+      </div>
+
+      <div class="accordion-grid">
+        <details>
+          <summary>What databases does Querithm support?</summary>
+          <p>Querithm supports six database engines in one native workspace: Microsoft SQL Server, PostgreSQL, MySQL / MariaDB, Oracle Database (over TCPS by default), SQLite, and DuckDB, with direct TLS and SSH tunnel connections plus local file and in-memory tabs.</p>
+        </details>
+        <details>
+          <summary>Is Querithm free and offline-first?</summary>
+          <p>Yes. Querithm is free to download under the GNU GPL-3.0 license, requires no account, collects zero telemetry, and runs fully offline. Fonts, the Monaco SQL editor, the Apache Arrow grid, and the execution plan renderer are all bundled locally.</p>
+        </details>
+        <details>
+          <summary>Which operating systems does Querithm run on?</summary>
+          <p>Querithm runs natively on Windows 10 and 11 (64-bit .exe installer and .msi package), macOS (Apple Silicon and Intel .dmg), and Linux x86-64 (AppImage, Debian/Ubuntu .deb, and Fedora/RHEL .rpm). On macOS, Oracle Database connections require Apple Silicon.</p>
+        </details>
+        <details>
+          <summary>How does Querithm protect database passwords and production environments?</summary>
+          <p>Database passwords and SSH keys are stored strictly in your operating system keyring and never leave your machine. Connection groups let you color-code Dev, Staging, and Prod servers with engine-enforced production and destructive-statement guards.</p>
+        </details>
+        <details>
+          <summary>How fast is Querithm on large SQL files and million-row results?</summary>
+          <p>On benchmarked SQL Server 2022 and PostgreSQL 16 workloads (600 tables, 400 stored procedures, a 12,023-line procedure, and a 1M-row query), Querithm achieves 5.9 ms p95 typing latency, 37.4 ms p95 AST autocomplete, 229 ms to paint the first Apache Arrow batch, and 1.25 s cold start.</p>
         </details>
       </div>
     </section>
@@ -452,6 +642,13 @@ Get-FileHash .\Querithm-windows-x64-setup.exe   # Windows PowerShell</code></pre
         <span>Send Mail</span>
       </a>
     </div>
+    <nav class="footer-links" aria-label="Release and project links">
+      <a href="https://github.com/dev-taosif-net/querithm-releases/releases" rel="noopener noreferrer">GitHub Releases</a>
+      <span aria-hidden="true">·</span>
+      <a href="https://github.com/dev-taosif-net/querithm-releases/releases/latest/download/SHA256SUMS.txt" rel="noopener noreferrer">SHA-256 Checksums</a>
+      <span aria-hidden="true">·</span>
+      <a href="mailto:dev.taosif.net@gmail.com">Contact</a>
+    </nav>
     <p>Download counts come from GitHub’s public release data. This page sets no cookies and runs no analytics.</p>
   </footer>
 </body>
